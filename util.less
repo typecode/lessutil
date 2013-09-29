@@ -50,10 +50,10 @@
     }
 }
 
-.box-sizing() {
-    -webkit-box-sizing: @arguments;
-    -mox-box-sizing: @arguments;
-    box-sizing: @arguments;
+.box-sizing(@value: content-box) {
+    -webkit-box-sizing: @value;
+    -mox-box-sizing: @value;
+    box-sizing: @value;
 }
 .content-box() {
     .box-sizing(content-box);
