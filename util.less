@@ -136,25 +136,23 @@
  * Corners and shadows
  */
 
-.border-radius(@radius: 0) {
-    -moz-border-radius: @radius;
+.border-radius(@radius: 3px) {
     -webkit-border-radius: @radius;
     border-radius: @radius;
+
+    background-clip: padding-box;
 }
-.box-shadow(@x: 0, @y: 0, @blur: 0, @spread: 0, @color: transparent) {
-    -moz-box-shadow:    @x @y @blur @spread @color;
-    -webkit-box-shadow: @x @y @blur @spread @color;
-    box-shadow:         @x @y @blur @spread @color;
+
+.box-shadow(@args) {
+    -webkit-box-shadow: @args;
+    box-shadow: @args;
+}
+.inner-shadow(@args) {
+    .box-shadow(inset @args);
 }
 .no-shadow() {
-    -moz-box-shadow:    none;
     -webkit-box-shadow: none;
     box-shadow:         none;
-}
-.inset-box-shadow(@x: 0, @y: 0, @blur: 0, @spread: 0, @color: transparent) {
-    -moz-box-shadow:    inset @x @y @blur @spread @color;
-    -webkit-box-shadow: inset @x @y @blur @spread @color;
-    box-shadow:         inset @x @y @blur @spread @color;
 }
 
 /*
@@ -183,12 +181,12 @@
     transition-delay:                   @delays;
     transition-timing-function:         @easings;
 }
-.animation(@name, @duration:500ms, @easing:ease, @delay:0ms, @repeat:1, @direction:normal) {
-    -webkit-animation: @arguments;
-    -moz-animation:    @arguments;
-    -ms-animation:     @arguments;
-    -o-animation:      @arguments;
-    animation:         @arguments;
+.animation(@args) {
+    -webkit-animation: @args;
+    -moz-animation:    @args;
+    -ms-animation:     @args;
+    -o-animation:      @args;
+    animation:         @args;
 }
 .backface-visiblity(@state: hidden) {
     -webkit-backface-visibility: @state;
@@ -201,27 +199,42 @@
  * Transforms
  */
 
-.rotate(@degrees) {
-    -webkit-transform: rotate(@degrees + 0deg);
-    -moz-transform:    rotate(@degrees + 0deg);
-    -ms-transform:     rotate(@degrees + 0deg);
-    -o-transform:      rotate(@degrees + 0deg);
-    transform:         rotate(@degrees + 0deg);
-    //filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+.rotate(@degrees:45deg) {
+    .transform(rotate(@degrees));
 }
+
 .scale(@x:1, @y:1) {
-    -webkit-transform: scale(@x, @y);
-    -moz-transform:    scale(@x, @y);
-    -ms-transform:     scale(@x, @y);
-    -o-transform:      scale(@x, @y);
-    transform:         scale(@x, @y);
+    .transform(scale(@x, @y));
 }
-.transform(@t) {
-    -webkit-transform: @arguments;
-    -moz-transform:    @arguments;
-    -ms-transform:     @arguments;
-    -o-transform:      @arguments;
-    transform:         @arguments;
+.scale(@factor:1) {
+    .scale(@factor, @factor);
+}
+
+.flip-horiz() {
+    .transform(scaleX(-1));
+}
+.flip-vert() {
+    .transform(scaleY(-1));
+}
+
+.translate(@x, @y) {
+  .transform(translate(@x, @y));
+}
+
+.translateY(@y) {
+  .transform(translateY(@y));
+}
+
+.translateX(@x) {
+  .transform(translateX(@x));
+}
+
+.transform(@args) {
+    -webkit-transform: @args;
+    -moz-transform: @args;
+    -ms-transform: @args;
+    -o-transform: @args;
+    transform: @args;
 }
 
 /*
