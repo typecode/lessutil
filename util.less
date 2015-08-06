@@ -303,10 +303,18 @@
  * Filters
  */
 
+.filter(@args) {
+    -webkit-filter: @args;
+    -moz-filter: @args;
+    -ms-filter: @args;
+    -o-filter: @args;
+    filter: @args;
+}
+
+.grayscale(@amount) {
+    .filter(grayscale(@amount));
+}
+
 .black-and-white() {
-    -webkit-filter: grayscale(100%);
-    -moz-filter: grayscale(100%);
-    -ms-filter: grayscale(100%);
-    -o-filter: grayscale(100%);
-    filter: grayscale(100%);
+    .grayscale(100%);
 }
