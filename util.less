@@ -295,52 +295,52 @@
  */
 
 .vertical-gradient(@top: rgba(255,255,255,0), @bottom: rgba(255,255,255,1)) {
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @top), color-stop(100%, @bottom));
-    background: -webkit-linear-gradient(top, @top 0%, @bottom 100%);
-    background:    -moz-linear-gradient(top, @top 0%, @bottom 100%);
-    background:      -o-linear-gradient(top, @top 0%, @bottom 100%);
-    background:     -ms-linear-gradient(top, @top 0%, @bottom 100%);
-    background:         linear-gradient(to bottom, @top 0%, @bottom 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @top), color-stop(100%, @bottom));
+    background-image: -webkit-linear-gradient(top, @top 0%, @bottom 100%);
+    background-image:    -moz-linear-gradient(top, @top 0%, @bottom 100%);
+    background-image:      -o-linear-gradient(top, @top 0%, @bottom 100%);
+    background-image:     -ms-linear-gradient(top, @top 0%, @bottom 100%);
+    background-image:         linear-gradient(to bottom, @top 0%, @bottom 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=argb(@top),endColorstr=argb(@bottom),GradientType=0 );
     // does ms filter need quotes around the color?
 }
 .vertical-gradient-half(@top: rgba(255,255,255,0), @bottom: rgba(255,255,255,1)) {
-    background: -webkit-gradient(linear, left top, left center, color-stop(0%, @top), color-stop(100%, @bottom));
-    background: -webkit-linear-gradient(top, @top 0%, center, @bottom 100%);
-    background:    -moz-linear-gradient(top, @top 0%, center, @bottom 100%);
-    background:      -o-linear-gradient(top, @top 0%, center, @bottom 100%);
-    background:     -ms-linear-gradient(top, @top 0%, center, @bottom 100%);
-    background:         linear-gradient(to center, @top 0%, @bottom 100%);
+    background-image: -webkit-gradient(linear, left top, left center, color-stop(0%, @top), color-stop(100%, @bottom));
+    background-image: -webkit-linear-gradient(top, @top 0%, center, @bottom 100%);
+    background-image:    -moz-linear-gradient(top, @top 0%, center, @bottom 100%);
+    background-image:      -o-linear-gradient(top, @top 0%, center, @bottom 100%);
+    background-image:     -ms-linear-gradient(top, @top 0%, center, @bottom 100%);
+    background-image:         linear-gradient(to center, @top 0%, @bottom 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=argb(@top),endColorstr=argb(@bottom),GradientType=0 );
     // does ms filter need quotes around the color?
 }
 .vertical-gradient-qtr(@top: rgba(255,255,255,0), @bottom: rgba(255,255,255,1)) {
-    background: -webkit-gradient(linear, left top, left 75%, color-stop(0%, @top), color-stop(100%, @bottom));
-    background: -webkit-linear-gradient(top, @top 0%, 75%, @bottom 100%);
-    background:    -moz-linear-gradient(top, @top 0%, 75%, @bottom 100%);
-    background:      -o-linear-gradient(top, @top 0%, 75%, @bottom 100%);
-    background:     -ms-linear-gradient(top, @top 0%, 75%, @bottom 100%);
-    background:         linear-gradient(to 75%, @top 0%, @bottom 100%);
+    background-image: -webkit-gradient(linear, left top, left 75%, color-stop(0%, @top), color-stop(100%, @bottom));
+    background-image: -webkit-linear-gradient(top, @top 0%, 75%, @bottom 100%);
+    background-image:    -moz-linear-gradient(top, @top 0%, 75%, @bottom 100%);
+    background-image:      -o-linear-gradient(top, @top 0%, 75%, @bottom 100%);
+    background-image:     -ms-linear-gradient(top, @top 0%, 75%, @bottom 100%);
+    background-image:         linear-gradient(to 75%, @top 0%, @bottom 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=argb(@top),endColorstr=argb(@bottom),GradientType=0 );
     // does ms filter need quotes around the color?
 }
 .horizontal-gradient(@left: rgba(255,255,255,0), @right: rgba(255,255,255,1)) {
-    background: -webkit-gradient(linear, left top, right top, color-stop(0%, @left), color-stop(100%, @right));
-    background: -webkit-linear-gradient(left, @left 0%, @right 100%);
-    background:    -moz-linear-gradient(left, @left 0%, @right 100%);
-    background:      -o-linear-gradient(left, @left 0%, @right 100%);
-    background:     -ms-linear-gradient(left, @left 0%, @right 100%);
-    background:         linear-gradient(to right, @left 0%, @right 100%);
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, @left), color-stop(100%, @right));
+    background-image: -webkit-linear-gradient(left, @left 0%, @right 100%);
+    background-image:    -moz-linear-gradient(left, @left 0%, @right 100%);
+    background-image:      -o-linear-gradient(left, @left 0%, @right 100%);
+    background-image:     -ms-linear-gradient(left, @left 0%, @right 100%);
+    background-image:         linear-gradient(to right, @left 0%, @right 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=argb(@left),endColorstr=argb(@right),GradientType=1 );
     // does ms filter need quotes around the color?
 }
 .radial-gradient(@center: rgba(255,255,255,0), @edge: rgba(0,0,0,1), @centerStopPct: 0%, @edgeStopPct: 100%) {
-    background: -moz-radial-gradient(center, ellipse cover,  @center @centerStopPct, @edge @edgeStopPct);
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(@centerStopPct, @center), color-stop(@edgeStopPct, @edge));
-    background: -webkit-radial-gradient(center, ellipse cover, @center @centerStopPct, @edge @edgeStopPct);
-    background: -o-radial-gradient(center, ellipse cover, @center @centerStopPct, @edge @edgeStopPct);
-    background: -ms-radial-gradient(center, ellipse cover, @center @centerStopPct, @edge @edgeStopPct);
-    background: radial-gradient(ellipse at center, @center @centerStopPct, @edge @edgeStopPct);
+    background-image: -moz-radial-gradient(center, ellipse cover,  @center @centerStopPct, @edge @edgeStopPct);
+    background-image: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(@centerStopPct, @center), color-stop(@edgeStopPct, @edge));
+    background-image: -webkit-radial-gradient(center, ellipse cover, @center @centerStopPct, @edge @edgeStopPct);
+    background-image: -o-radial-gradient(center, ellipse cover, @center @centerStopPct, @edge @edgeStopPct);
+    background-image: -ms-radial-gradient(center, ellipse cover, @center @centerStopPct, @edge @edgeStopPct);
+    background-image: radial-gradient(ellipse at center, @center @centerStopPct, @edge @edgeStopPct);
 }
 
 .linear-gradient-left(@color1,@stop1,@color2,@stop2) {
